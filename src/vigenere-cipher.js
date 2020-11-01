@@ -1,5 +1,5 @@
 class VigenereCipheringMachine {
-    constructor() {
+    constructor(type) {
         this.reverseType = type === false;
         let firstLetterIndex = 65;
         this.alphabet = new Array(26)
