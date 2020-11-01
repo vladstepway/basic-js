@@ -1,5 +1,6 @@
 class VigenereCipheringMachine {
     constructor() {
+        this.reverseType = type === false;
         let firstLetterIndex = 65;
         this.alphabet = new Array(26)
             .fill(1)
@@ -54,7 +55,9 @@ class VigenereCipheringMachine {
                 encryptedString += text[i];
             }
         }
-        return encryptedString;
+        return this.reverseType 
+        ? encryptedString.split('').reverse().join('') 
+        : encryptedString;
     }
 
 
@@ -69,7 +72,10 @@ class VigenereCipheringMachine {
                 decryptedString += cipher[i];
             }
         }
-        return decryptedString;
+        return this.reverseType 
+        ? decryptedString.split('').reverse().join('') 
+        : decryptedString;
+        
     }
 }
 
